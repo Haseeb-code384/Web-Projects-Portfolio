@@ -1,0 +1,62 @@
+#book {
+  width: 95%;
+  height: 60vh;
+  margin: 0 auto;
+  position: relative;
+  perspective: 500px;
+  box-shadow: 15px -9px 6px 0px rgba(0, 0, 0, 0.2);
+      border: 1px solid lightgrey;
+}
+
+.page {
+  position: absolute;
+  width: 100%;
+  height: 60vh;
+  top: 0;
+  left: 0;
+  backface-visibility: hidden;
+  transform: translateZ(-100px);
+  padding: 20px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+}
+
+#controls {
+  text-align: center;
+  margin-top: 20px;
+}
+
+button {
+  cursor: pointer;
+}
+
+.turn-page {
+  transition: transform 1s linear;
+}
+
+.turn-page.previous {
+  transform: translateZ(0) rotateY(90deg);
+}
+
+.turn-page.next {
+  transform: translateZ(0) rotateY(-90deg);
+}
+
+.progress-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 10px;
+  background-color: #F5F5F5;
+}
+
+.progress-bar-indicator {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 10px;
+  background-color: #000;
+  transition: width 1s linear;
+}

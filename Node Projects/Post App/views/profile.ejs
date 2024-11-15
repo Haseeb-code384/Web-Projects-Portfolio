@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Association App</title>
+  <link rel="stylesheet" href="/stylesheet/style.css">
+</head>
+<body>
+  <div class="main">
+    <a class="btn" href="/logout" >Logout</a>
+    <div class="img-cont">
+      <div class="image"><img src="/images/uploads/<%=user.profilepic%>" alt=""></div>
+      <h1><span style="font-weight: 400;">Welcome, </span> 
+        <%=user.name%> 🖐🏻✋🏻</h1>
+    </div>
+    
+    <h3>You can create a new post here</h3>
+    <form action="/post" method="post">
+      <textarea placeholder="What is on your mind?" class="inp" name="content"  ></textarea>
+      
+      <input type="submit" value="Create New Post">
+    </form>
+    <div class="posts">
+      <h2>My Posts</h2>
+      <div class="post-cont">
+        <% user.posts.reverse().forEach(function(post){%>
+          <div class="post">
+            <h4>@<%=user.username%></h4>
+            <p><%=post.content%></p>
+            <small><%=post.likes.length%> likes</small>
+            <div class="btns">
+              <a href="/like/<%=post._id%>">
+                 <%=post.likes.indexOf(user._id) === -1 ? "Like" : "Unlike" %>
+                </a>
+              <a href="/edit/<%=post._id%>">Edit</a>
+            </div>
+          </div>
+          <%})%>
+      </div>
+
+    </div>
+    
+  </div>
+
+  
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Association App</title>
+  <link rel="stylesheet" href="/stylesheet/style.css">
+</head>
+<body>
+  <div class="main" style="height: 100%;">
+    
+    <h1>Upload Profile Picture</h1>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+      <div class="preview-container">
+        <input type="file"  accept="image/*" onchange="filePreview()" class="inp" name="image">
+        <div class="preview">
+          <span>&#43;</span></div>
+      </div>
+      
+      
+      <input type="submit" value="Upload File">
+    </form>
+  </div>
+
+  <script>
+    function filePreview(){
+    const inp = document.querySelector('.inp');
+    const preview = document.querySelector('.preview');
+    const previewContainer = document.querySelector('.preview-container');
+    const previewSpan = preview.querySelector('span');
+    const file = inp.files[0];
+    const reader = new FileReader();
+
+    reader.onloadend = function(){
+      preview.style.backgroundImage = `url(${reader.result})`;
+      previewSpan.style.opacity= '0';
+    }
+    if(file){
+      reader.readAsDataURL(file);
+    }
+
+    
+
+    }
+
+  </script>
+
+  
+</body>
+</html>

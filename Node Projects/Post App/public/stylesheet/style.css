@@ -1,0 +1,155 @@
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body{ 
+  
+  width: 100%;
+  height: 100vh;
+}
+.main{
+  background-color: black;
+  color: white;
+  width: 100%;
+  /* height: 100vh; */
+  
+  padding: 50px 50px 250px 50px;
+}
+.main h1{
+  margin: 20px 0 0 0;
+  color: white;
+}
+.inp{
+  width: 60%;
+  padding: 6px 10px;
+  font-size: 20px;
+  margin-top: 20px;
+  background-color: rgba(63, 63, 63, 0.226);
+  display: block;
+  outline: none;
+  border: 1px solid rgba(37, 37, 37, 0.705);
+  color: rgba(216, 216, 216, 0.877);
+
+}
+input[type="submit"], .btn{
+  padding: 15px 20px;
+  margin-top: 20px;
+
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  color: rgb(218, 218, 218);
+  /* margin: 30px 0;  */
+  text-decoration: none;
+}
+input[type="submit"]{
+  background-color: rgba(44, 65, 248, 0.849);
+
+}
+
+.btn{
+  background-color: rgba(255, 50, 50, 0.884);
+}
+
+input[type="submit"]:hover, .btn:hover{
+  background-color:rgba(218, 218, 218, 0.644);
+  color:  rgb(255, 255, 255)
+}
+.alert{
+  position: sticky;
+  width: 100%;
+  background-color: rgb(51, 255, 0);
+  
+  font-weight: 500;
+}
+.alert h3 {
+  padding: 10px 40px;
+ 
+  color: rgb(2, 0, 0);
+  
+
+}
+.posts{
+  margin-top: 50px;
+}
+.post-cont{
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.post{
+  padding: 20px;
+  width: 40%;
+  background-color: rgba(58, 58, 58, 0.288);
+  
+}
+.post h4{
+  color: rgb(86, 173, 255);
+}
+.post p{
+  margin-top: 10px;
+  font-stretch: semi-condensed;
+}
+.post .btns{
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.post .btns a{
+  
+  text-decoration: none;
+  color: rgb(40, 98, 255);
+}
+
+.preview-container{
+  margin: 30px 0;
+  width: 270px;
+  border: 2px solid rgba(116, 116, 116, 0.733);
+  height: 300px;
+  position: relative;
+  overflow: hidden;
+}
+.preview-container .inp{
+  margin: 0;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  height: 100%;
+  cursor: pointer;
+  opacity: 0;
+  z-index: 2;
+}
+.preview-container .preview{
+  position: absolute;
+  background-color: transparent;
+  top: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  width: 100%;
+  font-size: 70px;
+  padding: 40% 0 0 40%;
+}
+.preview-container .preview span{
+  opacity: 0.4;
+}
+.img-cont{
+  display:flex;
+  margin: 30px 0;
+  gap: 20px;
+}
+.img-cont .image{
+  width: 100px;
+  height: 100px;
+  /* background-color: red; */
+}
+.img-cont .image img{
+  object-fit:cover;
+  width: 100%;
+  height: 100%;
+
+}

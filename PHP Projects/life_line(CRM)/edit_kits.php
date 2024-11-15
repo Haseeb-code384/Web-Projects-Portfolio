@@ -1,0 +1,95 @@
+<?php
+include( "config.php" );
+include( "allFunctions.php" );
+$id=$_REQUEST['id'];
+if(isset($_REQUEST['submit']))
+{
+    $name=$_REQUEST['name'];
+    $id=$_REQUEST['id'];
+    $sql="UPDATE `product_kit` SET `group_name` = '$name' WHERE `product_kit`.`id` = '$id';";
+    $query=mysqli_query($con,$sql);
+    $last_id=mysqli_insert_id($con);
+    if($query)
+    {
+        alertredirect("Updated Successfully","view_product_kits.php");
+    }
+    else
+    {
+    
+        alertredirect("Something Went Wrong","view_product_kits.php");
+    }
+    
+}
+?>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link rel="stylesheet" href="css\bootstrap.min.css">
+<link rel="stylesheet" href="css\custom-theme.css">
+
+<script src="semester.js"></script>
+</head>
+
+<body>
+<?php
+include "start.php";
+?>
+</div>
+<div class="content-wrapper">
+  <div class="container-fluid">
+ 
+  <?php breadcrumb(); ?>
+  <div class="row" style="">
+  <form method="post" action="">
+    <div class="border col-lg-12"> <span style="color: red;">Note:</span> All RED Fields Are Must
+      <div class="row">
+        <div class="col-12 text-center h4" style="background-color: #7A382C;color: #F8C401;"> Products Group </div>
+      </div>
+      <div class="row">
+          <?php
+          $sql_info="SELECT * FROM `product_kit` WHERE id='$id'";
+          $query_info=mysqli_query($con,$sql_info);
+          $row_info=mysqli_fetch_array($query_info);
+          
+          ?>
+      <div class="col-6">
+          <label class="text-danger"><strong>Enter Group Name: </strong></label>
+          <input type="hidden" name="id" value="<?php echo $row_info[0]; ?>">
+             <input name="name" value="<?php echo $row_info[1]; ?>"  autofocus="autofocus"  class="form-control" type="text" required   placeholder="Enter Group Name">
+         
+          </div>
+          
+        
+        
+      </div>
+
+     
+
+ 
+    </div>
+    <div class="col-12 text-center"> <br>
+      <input type="submit" name="submit" class="btn-sm btn-primary">
+      <input type="reset" class="btn-sm btn-secondary" value="Clear All">
+    </div>
+    </div>
+    </div>
+  </form>
+</div>
+</div>
+<br>
+<br>
+<br>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script> 
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />   --> 
+<script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script> 
+<!-- <script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>             -->
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css"/>
+<script>
+		$( document ).ready( function () {
+			$( '#employee_data' ).DataTable();
+		} );
+	</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Users</title>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+  <a href="/show" class="show">Show the Users Here</a>
+  <h2 style="margin-left: 150px;">Update User</h2>
+  <div class="form" style="display: flex; justify-content: space-between;">
+    
+    <form action="/update/<%=user._id%>" method="post" style="width: 70%;">
+      <input type="text" name="name" id="" placeholder="Enter your username here" value="<%=user.name%>">
+      <input type="email" name="email" id="" placeholder="Enter your email" value="<%=user.email%>">
+      <input type="text" name="image" id="" placeholder="Enter the Image Url" value="<%=user.image%>">
+      <input type="submit" value="Update User">
+    </form>
+    <div class="img-cont" style="width: 25%; height: 300px; background-color: rgb(92, 92, 92);">
+      <img src="<%=user.image%>" alt="" style="width: 95%; height: 95%; margin: 2% 2%; object-fit:cover; object-position: top;">
+    </div>
+  </div>
+</body>
+</html>

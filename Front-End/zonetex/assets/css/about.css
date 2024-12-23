@@ -1,0 +1,264 @@
+.page-highlight{
+  width: 100%;
+  height: 200px;
+  position: relative;
+  z-index: -2;
+}
+.page-highlight.reveal{
+  transform: translateY(-240px);
+}
+.page-highlight.reveal.show{
+  transform: translateY(0);
+}
+
+.page-highlight img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.page-highlight::after{
+  content: '';
+  width: 100%;
+  background-color: black;
+  opacity: 0.8;
+  height: 100%;
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+}
+
+.page-highlight .highlight-content{
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: var(--white);
+  align-content: center;
+  text-align: center;
+
+}
+.page-highlight .highlight-content h1{
+  font-size: 3vw;
+
+}
+.page-highlight .highlight-content h4{
+  font-size: 1vw;
+  font-weight: 400;
+  color: var(--cherry);
+}
+.page-highlight .highlight-content h4 span{
+  color: white;
+}
+.who-we-are{
+  width: 80%;
+  display: flex;
+  gap: 6%;
+  margin: 0 auto;
+  padding: 80px 0;
+  height: 700px;
+  
+}
+.who-we-are .image-cont-wwa{
+  width: 44%;
+  position: relative;
+  height: 100%;
+}
+.who-we-are .image-cont-wwa.reveal{
+  transform: translateX(-50%);
+}
+.who-we-are .image-cont-wwa.reveal.show{
+  transform: translateX(0);
+}
+
+.who-we-are .image-cont-wwa img:nth-child(1){
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center bottom;
+}
+.who-we-are .image-cont-wwa img:nth-child(2){
+  width: 60%;
+  height: 200px;
+  object-fit: cover;
+  position: absolute;
+  bottom: -50px;
+  right: -10%;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.575);
+  border-radius: 12px;
+}
+.who-we-are .content-waa{
+  width: 50%;
+  padding: 20px 0;
+}
+.who-we-are .content-waa.reveal{
+  transform: translateX(50%);
+}
+.who-we-are .content-waa.reveal.show{
+  transform: translateX(0);
+}
+.who-we-are .content-waa h4{
+  font-size: var(--headFont);
+  color: var(--blue);
+  margin: 2% 0;
+  text-transform: uppercase;
+}
+.who-we-are .content-waa h2{
+  font-size: var(--secondaryFont);
+  margin: 2% 0;
+}
+.who-we-are .content-waa p{
+  font-size: 1.2vw;
+  line-height: 22px;
+  margin-bottom: 4%;
+}
+.who-we-are .content-waa .btns-waa{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 7%;
+
+}
+.who-we-are .content-waa .btns-waa a{
+  text-decoration: none;
+  background-color: var(--blue);
+  padding: 12px 25px;
+  color: white;
+  position: relative;
+  transition: all 0.5s ease;
+  font-size: 1.2vw;
+  border-radius: 5px;
+}
+.who-we-are .content-waa .btns-waa a:hover{
+  background-color:#3C3C3C ;
+  transform: scale(1.1);
+}
+.mission-vision{
+  display: flex;
+  width: 80%;
+  margin: 60px auto;
+  height: 500px;
+}
+.mission-vision.reveal{
+  transform: translateY(50vh);
+}
+.mission-vision.reveal.show{
+  transform: translateY(0);
+}
+.mission-vision .mv-content{
+  width: 60%;
+  overflow: hidden;
+ 
+}
+.mission-vision .mv-content .mv-content-btns{
+  width: 100%;
+  display: flex;
+
+}
+.mission-vision .mv-content .mv-content-btns h4{
+  width: 50%;
+  text-align: center;
+  font-size: 1.7vw;
+  font-weight: 500;
+  padding: 10px 0;
+  background-color: rgb(255, 255, 255);
+  border-top: 1px solid rgba(2, 50, 112, 0.199);
+  border-left: 1px solid rgba(2, 50, 112, 0.199);
+}
+.mission-vision .mv-content .mv-content-btns h4:hover{
+  cursor: pointer;
+  color: rgba(27, 27, 27, 0.404);
+  text-shadow: 0 0 1px rgb(0, 67, 155);
+}
+.mission-vision .mv-content .mv-content-btns h4.active{
+  background-color: var(--blue) !important;
+  color: var(--white)
+}
+
+
+.mission-vision .mv-content .mv-tabcontent{
+  display: none;
+  padding: 30px 20px;
+  color: var(--whiteHead);
+  background-color: var(--blue);
+  height: 100%;
+}
+.mission-vision .mv-content .mv-tabcontent p{
+  /* text-align: justify; */
+  font-size: 1.2vw;
+  letter-spacing: 1px;
+  line-height: 25px;
+}
+.mission-vision .mv-content .mv-tabcontent.active{
+  display: block;
+}
+.mission-vision .mv-image{
+  width: 60%;
+}
+.mission-vision .mv-image img{
+  width: 100%;
+  height:100%;
+}
+
+/* ==================== 
+Media Query For Tablets
+==========================*/
+
+@media screen and (max-width: 800px){
+  .page-highlight .highlight-content h1{
+    font-size: 4vw;
+  }
+  .page-highlight .highlight-content h4{
+    font-size: 2vw;
+    
+  }
+  .who-we-are{
+    width: 90%;
+    height: 500px;
+  }
+  .who-we-are .content-waa{
+    padding: 5px 0;
+  }
+  .who-we-are .content-waa h4{
+    font-size: 1.2vw;
+  }
+  .who-we-are .content-waa h2{
+    font-size: 3vw;
+  }
+  .who-we-are .content-waa p{
+    font-size: 1.4vw;
+    line-height: 14px;
+  }
+  .mission-vision{
+    width: 90%;
+    height: 400px;
+  }
+  .mission-vision .mv-content .mv-tabcontent p{
+    font-size: 1.4vw;
+    line-height: 18px;
+  }
+  
+  /* .who-we-are .image-cont-wwa{
+    width: 50%;
+  } */
+
+}
+
+
+
+/* ==================== 
+Media Query For Mobiles
+==========================*/
+
+@media screen and (max-width: 500px){
+  .page-highlight .highlight-content h1{
+    font-size: 6vw;
+  }
+  .page-highlight .highlight-content h4{
+    font-size: 3vw;
+    
+  }
+}
